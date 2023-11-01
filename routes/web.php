@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,17 +15,21 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', [
+        "title" => "Home",
+    ]);
 });
 
 Route::get('/about', function () {
     return view('about', [
+        "title" => "About",
         "name" => "Ahmad Zidane",
         "email" => "ahmad@gmail.com",
         "image" => "ahmad.png",
     ]);
 });
 
-Route::get('/blog', function () {
-    return view('posts');
-});
+Route::get('/posts', [PostController::class, 'index']);
+
+// Halaman Single Post
+Route::get('/posts/{slug}', [PostController::class, 'show']);
