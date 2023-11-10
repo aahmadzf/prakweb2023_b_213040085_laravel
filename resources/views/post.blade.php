@@ -7,7 +7,7 @@
         <div class="col-md-8">
             <h2>{{ $post->title }}</h2>
 
-            <p>By. <a href="/applications/coba-laravel/public/posts/{{ $post->author->user }}" class="text-decoration-none">{{ $post->author->name }}</a> in <a href="/applications/coba-laravel/public/categories/{{ $post->category->slug }}" class="text-decoration-none">{{ $post->category->name }}</a>
+            <p>By. <a href="/applications/coba-laravel/public/posts?author={{ $post->author->user }}" class="text-decoration-none">{{ $post->author->name }}</a> in <a href="/applications/coba-laravel/public/posts?category={{ $post->category->slug }}" class="text-decoration-none">{{ $post->category->name }}</a>
             </p>
 
             {!! $post->body !!}

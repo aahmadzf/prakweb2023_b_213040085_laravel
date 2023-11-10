@@ -8,7 +8,7 @@
     <div class="row">
         @foreach($categories as $category)
         <div class="col-md-4">
-            <a href="/applications/coba-laravel/public/categories/{{ $category->slug }}">
+            <a href="/applications/coba-laravel/public/posts?category={{ $category->slug }}">
             <div class="card text-bg-dark">
                 <img src="https://source.unsplash.com/500x500?{{ $category->name }}" alt="{{ $category->name }}" class="card-img" alt="...">
                 <div class="card-img-overlay d-flex align-items-center p-0">
