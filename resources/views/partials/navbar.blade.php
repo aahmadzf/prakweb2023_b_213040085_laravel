@@ -20,6 +20,12 @@
                 </li>
             </li>
         </ul>
+
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="/applications/coba-laravel/public/login" class="nav-link {{ ($active === 'login' ) ? 'active' : '' }}"><i class="bi bi-box-arrow-in-right"></i>Login</a>
+          </li>
+        </ul>
         </div>
   </div>
 </nav>
