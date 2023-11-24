@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 
 class RegisterController extends Controller
@@ -26,13 +25,13 @@ class RegisterController extends Controller
             'password' => 'required|min:5|max:255',
         ]);
 
-        $validatedData['password'] = Hash::make($validatedData['password']);
+        $validatedData['password'] = bcrypt($validatedData['password']);
 
         User::create($validatedData);
 
         // $request->session()->flash('success', 'Registration Successfull! Please Login!')
 
-        return redirect('/applications/coba-laravel/public/login')->with('success', 'Registration Successfull! Please Login!');
+        return redirect('/login')->with('success', 'Registration Successfull! Please Login!');
     }
 
 }
