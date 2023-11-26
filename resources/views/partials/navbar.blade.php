@@ -31,7 +31,8 @@
                             Welcome Back, {{ auth()->user()->name }}
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-layout-text-sidebar-reverse"></i>My
+                            <li><a class="dropdown-item" href="/dashboard"><i
+                                        class="bi bi-layout-text-sidebar-reverse"></i>My
                                     Dashboard</a></li>
                             <li>
                                 <hr class="dropdown-divider">
