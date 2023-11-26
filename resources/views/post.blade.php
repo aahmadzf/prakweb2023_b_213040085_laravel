@@ -1,22 +1,21 @@
 @extends('layout.main')
 
 @section('container')
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h2>{{ $post->title }}</h2>
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <h2>{{ $post->title }}</h2>
+                <p>By. <a href="/posts?author={{ $post->author->user }}"
+                        class="text-decoration-none">{{ $post->author->name }}</a> in <a
+                        href="/posts?category={{ $post->category->slug }}"
+                        class="text-decoration-none">{{ $post->category->name }}</a>
+                </p>
 
-            <p>By. <a href="/applications/coba-laravel/public/posts?author={{ $post->author->user }}" class="text-decoration-none">{{ $post->author->name }}</a> in <a href="/applications/coba-laravel/public/posts?category={{ $post->category->slug }}" class="text-decoration-none">{{ $post->category->name }}</a>
-            </p>
+                {!! $post->body !!}
 
-            {!! $post->body !!}
-
-            <a href="/applications/coba-laravel/public/posts" class="text-decoration-none mt-3 d-block"> Back to posts</a>
+                <a href="/posts" class="text-decoration-none mt-3 d-block"> Back to posts</a>
+            </div>
         </div>
     </div>
-</div>
-
-
-
 @endsection
